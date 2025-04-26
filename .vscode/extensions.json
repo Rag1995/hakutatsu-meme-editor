@@ -1,3 +1,16 @@
 {
-  "recommendations": ["Vue.volar"]
+  "recommendations": [
+    "ms-ceintl.vscode-language-pack-zh-hant",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.githistory",
+    "github.copilot",
+    "kisstkondoros.vscode-gutter-preview",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "gruntfuggly.todo-tree",
+    "antfu.unocss",
+    "sibiraj-s.vscode-scss-formatter",
+    "vue.volar"
+  ]
 }
