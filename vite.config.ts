@@ -25,6 +25,7 @@ export default defineConfig({
       imports: [
         'vue', // Vue 3
         VueRouterAutoImports,
+        'vue-i18n',
       ],
       /* options */
     }),
