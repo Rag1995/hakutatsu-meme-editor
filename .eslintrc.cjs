@@ -30,7 +30,7 @@ module.exports = {
     curly: ['error', 'multi-or-nest'], // 允許單行語句省略大括號 (例如: if 語句)
     '@typescript-eslint/consistent-type-imports': 'off', // 關閉一致的型別引入
     '@typescript-eslint/no-empty-object-type': 'error', // 禁止使用空的物件型別 (例如: {})
-    'vue/multi-word-component-names': 'error', // 要求元件名稱必須由多個單字組成
+    'vue/multi-word-component-names': 'off', // 要求元件名稱必須由多個單字組成
     // 禁止未使用的變數，但是允許使用 _ 開頭的變數
     '@typescript-eslint/no-unused-vars': [
       'error',
