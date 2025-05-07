@@ -7,6 +7,11 @@ const zhTW = {
       about: '關於',
     },
   },
+  aria: {
+    toggleDarkMode: '切換深色模式',
+    toggleLightMode: '切換淺色模式',
+    changeLanguage: '切換語言',
+  },
 }
 
 export default zhTW

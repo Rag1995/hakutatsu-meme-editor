@@ -7,6 +7,11 @@ const ja = {
       about: 'アバウト',
     },
   },
+  aria: {
+    toggleDarkMode: 'ダークモードを切り替える',
+    toggleLightMode: 'ライトモードを切り替える',
+    changeLanguage: '言語を変更する',
+  },
 }
 
 export default ja

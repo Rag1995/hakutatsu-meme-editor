@@ -9,8 +9,9 @@
     "christian-kohler.npm-intellisense",
     "christian-kohler.path-intellisense",
     "gruntfuggly.todo-tree",
-    "antfu.unocss",
     "sibiraj-s.vscode-scss-formatter",
-    "vue.volar"
+    "vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss"
   ]
 }

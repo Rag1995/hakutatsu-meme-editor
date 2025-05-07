@@ -1,5 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <RouterView />
+  <AppHeader />
+
+  <main class="py-8">
+    <RouterView />
+  </main>
 </template>

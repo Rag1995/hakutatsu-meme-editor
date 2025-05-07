@@ -5,11 +5,20 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import tailwindcss from '@tailwindcss/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    tailwindcss(),
+    Icons({
+      scale: 1.5,
+      autoInstall: true,
+      /* options */
+    }),
     VueRouter({
       extensions: ['.vue', '.md'],
       routesFolder: ['src/pages'],
@@ -26,6 +35,7 @@ export default defineConfig({
         'vue', // Vue 3
         VueRouterAutoImports,
         'vue-i18n',
+        '@vueuse/core',
       ],
       /* options */
     }),
@@ -34,7 +44,7 @@ export default defineConfig({
       collapseSamePrefixes: true, // 相同前綴的命名空間合併
       dts: 'src/vue-components.d.ts', // 自動生成的 TypeScript 定義檔
       dirs: ['src/components'], // 自動導入的資料夾
-      resolvers: [], // 自定義解析器
+      resolvers: [IconsResolver({ prefix: false })], // 自定義解析器
       /* options */
     }),
   ],

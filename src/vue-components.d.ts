@@ -8,7 +8,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppHeader: typeof import('./components/header/AppHeader.vue')['default']
+    DarkToggler: typeof import('./components/header/DarkToggler.vue')['default']
+    FlowbiteLanguageOutline: typeof import('~icons/flowbite/language-outline')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    LanguageDropdown: typeof import('./components/header/LanguageDropdown.vue')['default']
+    LineMdMoonFilledToSunnyFilledTransition: typeof import('~icons/line-md/moon-filled-to-sunny-filled-transition')['default']
+    LineMdSunnyFilledLoopToMoonFilledTransition: typeof import('~icons/line-md/sunny-filled-loop-to-moon-filled-transition')['default']
+    MdiAccount: typeof import('~icons/mdi/account')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

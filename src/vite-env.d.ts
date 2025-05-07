@@ -9,3 +9,13 @@ declare module 'vue-router' {
     order?: number
   }
 }
+
+import { GlobalComponents } from 'vue'
+declare global {
+  type CompInst = {
+    [Property in keyof GlobalComponents]: InstanceType<
+      GlobalComponents[Property]
+    >
+  }
+  type UnwrapReadonlyArray<T> = T extends Readonly<Array<infer U>> ? U : T
+}

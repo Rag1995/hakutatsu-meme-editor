@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     es6: true, // 啟用 ECMAScript 6 的全局變量和語法 (例如: let、const、箭頭函數等)
     browser: true, // 啟用瀏覽器環境的全局變量 (例如: window、document)
