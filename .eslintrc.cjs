@@ -28,6 +28,7 @@ module.exports = {
     },
   ],
   rules: {
+    'object-shorthand': ['error', 'always'], // 強制使用屬性縮寫
     curly: ['error', 'multi-or-nest'], // 允許單行語句省略大括號 (例如: if 語句)
     '@typescript-eslint/consistent-type-imports': 'off', // 關閉一致的型別引入
     '@typescript-eslint/no-empty-object-type': 'error', // 禁止使用空的物件型別 (例如: {})

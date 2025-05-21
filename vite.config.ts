@@ -6,19 +6,13 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import tailwindcss from '@tailwindcss/vite'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
-    Icons({
-      scale: 1.5,
-      autoInstall: true,
-      /* options */
-    }),
     VueRouter({
       extensions: ['.vue', '.md'],
       routesFolder: ['src/pages'],
@@ -36,6 +30,8 @@ export default defineConfig({
         VueRouterAutoImports,
         'vue-i18n',
         '@vueuse/core',
+        'pinia',
+        { from: 'vue', imports: ['ShallowRef', 'Ref'], type: true },
       ],
       /* options */
     }),
@@ -44,8 +40,13 @@ export default defineConfig({
       collapseSamePrefixes: true, // 相同前綴的命名空間合併
       dts: 'src/vue-components.d.ts', // 自動生成的 TypeScript 定義檔
       dirs: ['src/components'], // 自動導入的資料夾
-      resolvers: [IconsResolver({ prefix: false })], // 自定義解析器
+      resolvers: [], // 自定義解析器
       /* options */
+    }),
+    VueI18nPlugin({
+      /* options */
+      // locale messages resource pre-compile option
+      include: [resolve(__dirname, './src/i18n/locales/**')],
     }),
   ],
   resolve: {
@@ -54,5 +55,8 @@ export default defineConfig({
       '@img/': `${resolve(__dirname, './src/assets/img')}/`,
     },
     extensions: ['.vue', '.js', '.ts'],
+  },
+  optimizeDeps: {
+    include: ['gif.js'], // 強制優化 gif.js
   },
 })

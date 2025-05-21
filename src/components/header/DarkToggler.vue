@@ -8,16 +8,28 @@ const isDark = useDark({
   valueLight: 'light',
   storageKey: 'data-theme',
 })
-const toggleDark = useToggle(isDark)
 </script>
 
+<i18n lang="yaml">
+zh-TW:
+  toggleLightMode: '切換為淺色模式'
+  toggleDarkMode: '切換為深色模式'
+en:
+  toggleLightMode: 'Switch to light mode'
+  toggleDarkMode: 'Switch to dark mode'
+ja:
+  toggleLightMode: 'ライトモードに切り替え'
+  toggleDarkMode: 'ダークモードに切り替え'
+</i18n>
+
 <template>
-  <button
-    :aria-label="isDark ? t('aria.toggleLightMode') : t('aria.toggleDarkMode')"
-    class="btn btn-square btn-ghost"
-    @click="toggleDark()"
+  <label
+    role="button"
+    :aria-label="isDark ? t('toggleLightMode') : t('toggleDarkMode')"
+    class="btn !swap btn-square swap-rotate btn-ghost"
   >
-    <LineMdSunnyFilledLoopToMoonFilledTransition v-if="isDark" />
-    <LineMdMoonFilledToSunnyFilledTransition v-else />
-  </button>
+    <input v-model="isDark" type="checkbox" />
+    <i class="swap-off i-famicons-sunny" />
+    <i class="swap-on i-famicons-moon" />
+  </label>
 </template>

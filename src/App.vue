@@ -3,7 +3,9 @@
 <template>
   <AppHeader />
 
-  <main class="py-8">
+  <main class="min-h-[calc(100vh-3.5rem-300px)] bg-base-300">
     <RouterView />
   </main>
+
+  <AppFooter />
 </template>

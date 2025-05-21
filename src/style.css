@@ -2,12 +2,59 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
-}
-/* ; */
+} /* ; */
+
+/* 
+  #F6AC4D	oklch(0.79 0.18 70)	深黃
+  #FCCE50	oklch(0.8699 0.1529 90.12)	黃
+  #50C6EA	oklch(0.7742 0.1159 221.59)	天藍
+  #4F83CE	oklch(0.6083 0.1276 257.6)	深藍
+  #4FBE18	oklch(0.6926 0.2044 137.12)	綠
+  #076639	oklch(0.451 0.1161 152.02)	深綠 
+  oklch(0.95 0 0) 白
+  oklch(0.1 0 0) 黑
+*/
+
+@plugin "daisyui/theme" {
+  name: "light";
+  
+  --color-primary: oklch(0.6083 0.1276 257.6);
+  --color-primary-content: oklch(0.95 0 0);
+  --color-secondary: oklch(0.7742 0.1159 221.59);
+  --color-secondary-content: oklch(0.1 0 0);
+  --color-accent: oklch(0.8699 0.1529 90.12);
+  --color-accent-content: oklch(0.1 0 0);
+  --color-success: oklch(0.6926 0.2044 137.12);
+  --color-success-content: oklch(0.1 0 0);
+  --color-warning: oklch(0.79 0.18 70);
+  --color-warning-content: oklch(0.1 0 0);
+} /* ; */
+@plugin "daisyui/theme" {
+  name: "dark";
+  
+  --color-primary: oklch(0.6083 0.1276 257.6);
+  --color-primary-content: oklch(0.95 0 0);
+  --color-secondary: oklch(0.7742 0.1159 221.59);
+  --color-secondary-content: oklch(0.1 0 0);
+  --color-accent: oklch(0.8699 0.1529 90.12);
+  --color-accent-content: oklch(0.1 0 0);
+  --color-success: oklch(0.6926 0.2044 137.12);
+  --color-success-content: oklch(0.1 0 0);
+  --color-warning: oklch(0.79 0.18 70);
+  --color-warning-content: oklch(0.1 0 0);
+} /* ; */
+@plugin '@egoist/tailwindcss-icons' {
+  scale: 1.5;
+} /* ; */
 
 @utility container {
-  @apply mx-auto;
+  @apply mx-auto px-4;
+
+  @variant max-lg {
+    @apply max-w-full;
+  }
 }
+
 
 html {
   @apply w-screen min-h-screen m-0 p-0 overflow-x-hidden;

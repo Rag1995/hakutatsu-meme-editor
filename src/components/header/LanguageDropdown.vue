@@ -12,9 +12,12 @@ const setLocale = (lang: string) => {
   localStorage.setItem('locale', lang)
 }
 
+document.title = t('title')
+
 watch(
   locale,
   (newLocale) => {
+    document.title = t('title')
     document.documentElement.lang = newLocale
   },
   { immediate: true },
@@ -26,12 +29,11 @@ watch(
     <div
       tabindex="0"
       role="button"
-      :aria-label="t('aria.changeLanguage')"
+      :aria-label="t('changeLanguage')"
       class="btn btn-square btn-ghost"
     >
-      <FlowbiteLanguageOutline />
+      <i class="i-famicons-language" />
     </div>
-    <!-- dropdown-content bg-base-200 text-base-content rounded-box top-px mt-16 h-[30.5rem] max-h-[calc(100vh-8.6rem)] w-56 overflow-y-auto border border-white/5 shadow-2xl outline-1 outline-black/5 -->
     <div
       tabindex="0"
       class="dropdown-content w-36 overflow-y-auto rounded-box border border-base-content/10 bg-base-200 text-base-content shadow-2xl"
@@ -42,19 +44,13 @@ watch(
             :class="{ 'menu-active': locale === value }"
             @click="setLocale(value)"
           >
+            <span aria-hidden="true" class="font-mono font-black opacity-40">
+              {{ value.slice(0, 2).toUpperCase() }}
+            </span>
             {{ label }}
           </button>
         </li>
       </ul>
     </div>
   </div>
-
-  <!-- <Button
-    icon="pi pi-language"
-    severity="secondary"
-    aria-haspopup="true"
-    aria-controls="language-menu"
-    @click="toggle"
-  />
-  <Menu id="language-menu" ref="menu" :model="items" popup /> -->
 </template>
