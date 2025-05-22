@@ -16,7 +16,7 @@ const isDark = useDark({
     :aria-label="
       isDark ? t('buttons.toggleLightMode') : t('buttons.toggleDarkMode')
     "
-    class="btn !swap btn-square swap-rotate btn-ghost"
+    class="btn !swap btn-square swap-rotate btn-ghost max-sm:btn-sm"
   >
     <input v-model="isDark" type="checkbox" />
     <i class="swap-off i-famicons-sunny" />

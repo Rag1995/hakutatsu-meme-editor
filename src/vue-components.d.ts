@@ -11,6 +11,7 @@ declare module 'vue' {
     AppFooter: typeof import('./components/footer/AppFooter.vue')['default']
     AppHeader: typeof import('./components/header/AppHeader.vue')['default']
     DarkToggler: typeof import('./components/header/DarkToggler.vue')['default']
+    DriverButton: typeof import('./components/header/DriverButton.vue')['default']
     GifGenerator: typeof import('./components/GifGenerator.vue')['default']
     ImageEditor: typeof import('./components/editor/ImageEditor.vue')['default']
     ImageGallery: typeof import('./components/ImageGallery.vue')['default']

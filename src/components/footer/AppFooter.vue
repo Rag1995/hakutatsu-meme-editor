@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <footer class="bg-base-100 text-base-content">
     <div class="container footer p-20 md:footer-horizontal">
-      <aside>
+      <nav id="hakutatsu-social-media">
         <img
           src="@img/hakutatsu.jpg"
           alt="北達 Hakutatsu"
@@ -35,8 +35,8 @@ const { t } = useI18n()
             <i class="i-tabler-brand-youtube-filled" />
           </a>
         </div>
-      </aside>
-      <nav>
+      </nav>
+      <nav id="author-social-media">
         <img
           src="@img/me-1.png"
           :alt="t('footer.websiteAuthor')"

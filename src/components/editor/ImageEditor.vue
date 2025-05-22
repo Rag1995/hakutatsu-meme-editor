@@ -78,7 +78,7 @@ const addTextbox = () => {
     id: new Date().getTime(),
     left: width * 0.5,
     top: height * 0.97,
-    lineHeight: 0.9,
+    lineHeight: 1,
     originX: 'center',
     originY: 'bottom',
     fontSize: 72,
@@ -151,7 +151,7 @@ provide('canvas', canvas)
       :class="{ hidden: loading }"
     >
       <div class="shrink-0 self-center md:self-start">
-        <div class="w-full max-w-sm">
+        <div id="hakutatsu" class="w-full max-w-sm">
           <canvas ref="canvasRef" />
         </div>
       </div>
@@ -164,15 +164,27 @@ provide('canvas', canvas)
         />
 
         <div class="flex flex-row flex-wrap gap-2">
-          <button class="btn btn-primary" @click="addTextbox()">
+          <button
+            id="add-text-btn"
+            class="btn btn-primary"
+            @click="addTextbox()"
+          >
             <i class="i-tabler-pencil-plus" />
             {{ t('buttons.addText') }}
           </button>
-          <button class="btn btn-secondary" @click="addToGallery()">
+          <button
+            id="add-to-gallery-btn"
+            class="btn btn-secondary"
+            @click="addToGallery()"
+          >
             <i class="i-tabler-photo-plus" />
             {{ t('buttons.addToGallery') }}
           </button>
-          <button class="btn btn-accent" @click="handleDownload()">
+          <button
+            id="download-img-btn"
+            class="btn btn-accent"
+            @click="handleDownload()"
+          >
             <i class="i-tabler-download" />
             {{ t('buttons.downloadFile', { file: t('files.image') }) }}
           </button>

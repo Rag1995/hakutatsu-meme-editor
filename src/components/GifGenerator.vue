@@ -4,7 +4,7 @@ import { downloadFile } from '@/utils'
 
 const { t } = useI18n()
 const store = useGalleryStore()
-const { gifUrl, isGeneratingGIF } = toRefs(store)
+const { gallery, gifUrl, isGeneratingGIF } = toRefs(store)
 const { generateGIF } = store
 
 const modal = ref<HTMLDialogElement>()
@@ -21,7 +21,12 @@ const handleDownload = () => {
 </script>
 
 <template>
-  <button class="btn btn-lg btn-success" @click="showModal()">
+  <button
+    id="gif-generator-btn"
+    class="btn btn-lg btn-success"
+    :disabled="gallery.length === 0"
+    @click="showModal()"
+  >
     <i class="i-tabler-photo-video" />
     {{ t('buttons.generateFile', { file: 'GIF' }) }}
   </button>

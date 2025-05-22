@@ -1,7 +1,7 @@
 import GIF from 'gif.js'
 
 export const useGalleryStore = defineStore('gallery', () => {
-  const gallery = useStorage<string[]>('gallery', [])
+  const gallery = useStorage<string[]>('gallery', ['./assets/img/example.png'])
 
   const removeFromGallery = (index: number) => {
     gallery.value.splice(index, 1)

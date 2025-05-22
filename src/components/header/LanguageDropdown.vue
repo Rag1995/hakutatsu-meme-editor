@@ -28,7 +28,7 @@ watch(
       tabindex="0"
       role="button"
       :aria-label="t('buttons.changeLanguage')"
-      class="btn btn-square btn-ghost"
+      class="btn btn-square btn-ghost max-sm:btn-sm"
     >
       <i class="i-famicons-language" />
     </div>

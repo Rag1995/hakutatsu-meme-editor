@@ -53,7 +53,7 @@ const adjustTextSize = (delta: number) => {
 </script>
 
 <template>
-  <div class="space-y-1">
+  <div class="textbox-editor space-y-1">
     <div class="flex flex-wrap space-y-1 space-x-4">
       <div class="join">
         <div class="tooltip" :data-tip="t('buttons.decreaseFontSize')">

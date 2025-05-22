@@ -21,11 +21,15 @@ export default {
   },
   buttons: {
     // common
+    next: '次へ',
+    prev: '前へ',
+    done: '完了',
     close: '閉じる',
     remove: '削除',
     generateFile: '{file}を生成',
     downloadFile: '{file}をダウンロード',
     // header
+    startDriver: 'ガイドを開始',
     githubRepo: 'GitHub リポジトリ',
     toggleLightMode: 'ライトモードに切り替え',
     toggleDarkMode: 'ダークモードに切り替え',
@@ -42,5 +46,50 @@ export default {
   },
   placeholders: {
     inputText: '文字入力#{number}',
+  },
+  driver: {
+    steps: {
+      hakutatsu: {
+        title: 'ここを見て！',
+        description: '彼の名前は Hakutatsu！かわいい北極オオカミです！',
+      },
+      textboxEditor: {
+        title: 'セリフを追加',
+        description:
+          'ここで Hakutatsu に言わせたいセリフを入力できます！どんなセリフでもOK！',
+      },
+      addText: {
+        title: 'もっと...もっとセリフを！',
+        description: 'セリフが1つでは足りない？もっと追加しましょう！',
+      },
+      downloadImage: {
+        title: 'みんなと共有！',
+        description: '完成したら画像をダウンロードできます！',
+      },
+      addToGallery: {
+        title: 'ギャラリーに追加',
+        description: '現在の画像をギャラリーに保存できます！',
+      },
+      gallery: {
+        title: 'あなた専用のギャラリー',
+        description:
+          'ここにはすべての画像が表示されます！ドラッグして順序を変更することもできます！',
+      },
+      gifGenerator: {
+        title: 'GIFを生成！',
+        description: 'Hakutatsu のセリフをGIFアニメーションにできます！',
+      },
+      hakutatsuSocialMedia: {
+        title: '楽しんでね :)',
+        description:
+          'Hakutatsu が好きなら、ぜひ彼のSNSをフォローしてください！',
+      },
+    },
+    buttons: {
+      done: '完了',
+      close: '閉じる',
+      next: '次へ',
+      prev: '前へ',
+    },
   },
 }

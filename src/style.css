@@ -1,7 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes:
+    light --default,
+    dark --prefersdark;
 } /* ; */
 
 /* 
@@ -16,8 +18,8 @@
 */
 
 @plugin "daisyui/theme" {
-  name: "light";
-  
+  name: 'light';
+
   --color-primary: oklch(0.6083 0.1276 257.6);
   --color-primary-content: oklch(0.95 0 0);
   --color-secondary: oklch(0.7742 0.1159 221.59);
@@ -30,8 +32,8 @@
   --color-warning-content: oklch(0.1 0 0);
 } /* ; */
 @plugin "daisyui/theme" {
-  name: "dark";
-  
+  name: 'dark';
+
   --color-primary: oklch(0.6083 0.1276 257.6);
   --color-primary-content: oklch(0.95 0 0);
   --color-secondary: oklch(0.7742 0.1159 221.59);
@@ -55,7 +57,36 @@
   }
 }
 
-
 html {
-  @apply w-screen min-h-screen m-0 p-0 overflow-x-hidden;
+  @apply m-0 min-h-screen w-screen overflow-x-hidden p-0;
+}
+
+.driver-popover.driverjs-theme {
+  @apply bg-base-100 text-base-content;
+}
+.driver-popover.driverjs-theme .driver-popover-progress-text {
+  @apply text-base-content/40;
+}
+.driver-popover.driverjs-theme .driver-popover-prev-btn {
+  @apply btn btn-sm btn-neutral;
+}
+.driver-popover.driverjs-theme .driver-popover-next-btn {
+  @apply btn btn-sm btn-accent;
+}
+
+.driver-popover.driverjs-theme
+  .driver-popover-arrow-side-left.driver-popover-arrow {
+  @apply border-l-base-100;
+}
+.driver-popover.driverjs-theme
+  .driver-popover-arrow-side-right.driver-popover-arrow {
+  @apply border-r-base-100;
+}
+.driver-popover.driverjs-theme
+  .driver-popover-arrow-side-top.driver-popover-arrow {
+  @apply border-t-base-100;
+}
+.driver-popover.driverjs-theme
+  .driver-popover-arrow-side-bottom.driver-popover-arrow {
+  @apply border-b-base-100;
 }

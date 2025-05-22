@@ -10,7 +10,7 @@ const { removeFromGallery } = store
 </script>
 
 <template>
-  <div>
+  <div id="gallery">
     <div class="divider">
       <div class="flex items-center gap-2">
         <i class="i-tabler-star-filled shrink-0 text-accent" />
