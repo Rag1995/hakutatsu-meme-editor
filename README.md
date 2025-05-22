@@ -1,6 +1,20 @@
 # Hakutatsu Meme Editor
 
-Hakutatsu Meme Editor 是一個基於 Vue 3 的迷因圖片編輯器，大家可以幫北達加上任何句子，然後產出自己的北達迷因 GIF !!
+Hakutatsu Meme Editor 是一個基於 Vue 3 的迷因圖片編輯器，大家可以幫北達加上任何句子，然後產出自己的北達迷因 GIF !! Have Fun ~
+
+---
+
+## 項目截圖
+
+### 網站主頁
+<p align="center">
+    <img src="./public/assets/img/demo.png" width="500">
+</p>
+
+### 產生GIF
+<p align="center">
+    <img src="./public/assets/img/demo.gif" width="250">
+</p>
 
 ---
 
