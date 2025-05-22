@@ -73,7 +73,7 @@ const destroyCanvas = () => {
 // 加入文字
 const addTextbox = () => {
   counter.value++
-  const content = t('inputText', { number: counter.value })
+  const content = t('placeholders.inputText', { number: counter.value })
   const textbox = new Textbox(content, {
     id: new Date().getTime(),
     left: width * 0.5,
@@ -144,24 +144,6 @@ onBeforeMount(() => {
 provide('canvas', canvas)
 </script>
 
-<i18n lang="yaml">
-zh-TW:
-  inputText: '輸入文字#{number}'
-  addText: '加入文字'
-  addToGallery: '加入到畫廊'
-  downloadImage: '下載圖片'
-en:
-  inputText: 'InputText#{number}'
-  addText: 'Add Text'
-  addToGallery: 'Add to Gallery'
-  downloadImage: 'Download Image'
-ja:
-  inputText: '文字入力#{number}'
-  addText: '文字追加'
-  addToGallery: 'ギャラリーに追加'
-  downloadImage: '画像をダウンロード'
-</i18n>
-
 <template>
   <div>
     <div
@@ -184,15 +166,15 @@ ja:
         <div class="flex flex-row flex-wrap gap-2">
           <button class="btn btn-primary" @click="addTextbox()">
             <i class="i-tabler-pencil-plus" />
-            {{ t('addText') }}
+            {{ t('buttons.addText') }}
           </button>
           <button class="btn btn-secondary" @click="addToGallery()">
             <i class="i-tabler-photo-plus" />
-            {{ t('addToGallery') }}
+            {{ t('buttons.addToGallery') }}
           </button>
           <button class="btn btn-accent" @click="handleDownload()">
             <i class="i-tabler-download" />
-            {{ t('downloadImage') }}
+            {{ t('buttons.downloadFile', { file: t('files.image') }) }}
           </button>
         </div>
       </div>

@@ -1,15 +1,6 @@
 <script setup lang="ts">
-const { t } = useI18n({ useScope: 'global' })
+const { t } = useI18n()
 </script>
-
-<i18n lang="yaml">
-zh-TW:
-  githubRepo: 'GitHub 倉庫'
-en:
-  githubRepo: 'GitHub Repository'
-ja:
-  githubRepo: 'GitHub リポジトリ'
-</i18n>
 
 <template>
   <header
@@ -29,7 +20,8 @@ ja:
         <a
           role="button"
           href="https://github.com/Rag1995/hakutatsu-meme-editor"
-          :aria-label="t('githubRepo')"
+          target="_blank"
+          :aria-label="t('buttons.githubRepo')"
           class="btn btn-square btn-ghost"
         >
           <i class="i-simple-icons-github" />

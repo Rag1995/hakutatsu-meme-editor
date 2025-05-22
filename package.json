@@ -30,7 +30,6 @@
     "@iconify-json/simple-icons": "^1.2.35",
     "@iconify-json/solar": "^1.2.2",
     "@iconify-json/tabler": "^1.2.18",
-    "@intlify/unplugin-vue-i18n": "^6.0.8",
     "@types/gif.js": "^0.2.5",
     "@types/node": "^22.15.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",

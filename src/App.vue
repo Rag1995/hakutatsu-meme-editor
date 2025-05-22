@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { t } = useI18n()
+document.title = t('title')
+</script>
 
 <template>
   <AppHeader />

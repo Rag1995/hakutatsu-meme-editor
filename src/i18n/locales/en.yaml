@@ -1,7 +1,0 @@
-greeting: "Hello"
-farewell: "Goodbye"
-title: "Hakutatsu Meme Editor"
-changeLanguage: "Change Language"
-routes:
-  home: "Home"
-  about: "About"

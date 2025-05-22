@@ -1,7 +1,0 @@
-greeting: "こんにちは"
-farewell: "さようなら"
-title: "Hakutatsuミームエディター"
-changeLanguage: "言語を変更"
-routes:
-  home: "ホーム"
-  about: "アバウト"

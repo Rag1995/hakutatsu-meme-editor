@@ -20,30 +20,18 @@ const handleDownload = () => {
 }
 </script>
 
-<i18n lang="yaml">
-zh-TW:
-  generateGIF: '產生GIF'
-  downloadGIF: '下載GIF'
-  close: '關閉'
-en:
-  generateGIF: 'Generate GIF'
-  downloadGIF: 'Download GIF'
-  close: 'Close'
-ja:
-  generateGIF: 'GIFを生成'
-  downloadGIF: 'GIFをダウンロード'
-  close: '閉じる'
-</i18n>
-
 <template>
   <button class="btn btn-lg btn-success" @click="showModal()">
     <i class="i-tabler-photo-video" />
-    {{ t('generateGIF') }}
+    {{ t('buttons.generateFile', { file: 'GIF' }) }}
   </button>
   <dialog ref="modal" class="modal">
     <div class="modal-box pt-8">
       <form method="dialog">
-        <button class="btn absolute top-2 right-2 btn-circle btn-ghost btn-sm">
+        <button
+          :aria-label="t('buttons.close')"
+          class="btn absolute top-2 right-2 btn-circle btn-ghost btn-sm"
+        >
           ✕
         </button>
       </form>
@@ -58,12 +46,12 @@ ja:
       <div class="modal-action grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2">
         <button class="btn btn-accent" @click="handleDownload()">
           <i class="i-tabler-download" />
-          {{ t('downloadGIF') }}
+          {{ t('buttons.downloadFile', { file: 'GIF' }) }}
         </button>
         <form method="dialog">
           <button class="btn w-full">
             <i class="i-tabler-x" />
-            {{ t('close') }}
+            {{ t('buttons.close') }}
           </button>
         </form>
       </div>

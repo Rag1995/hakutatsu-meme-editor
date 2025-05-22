@@ -12,8 +12,6 @@ const setLocale = (lang: string) => {
   localStorage.setItem('locale', lang)
 }
 
-document.title = t('title')
-
 watch(
   locale,
   (newLocale) => {
@@ -29,7 +27,7 @@ watch(
     <div
       tabindex="0"
       role="button"
-      :aria-label="t('changeLanguage')"
+      :aria-label="t('buttons.changeLanguage')"
       class="btn btn-square btn-ghost"
     >
       <i class="i-famicons-language" />

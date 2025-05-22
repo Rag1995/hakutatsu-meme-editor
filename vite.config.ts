@@ -6,7 +6,6 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import tailwindcss from '@tailwindcss/vite'
-import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -42,11 +41,6 @@ export default defineConfig({
       dirs: ['src/components'], // 自動導入的資料夾
       resolvers: [], // 自定義解析器
       /* options */
-    }),
-    VueI18nPlugin({
-      /* options */
-      // locale messages resource pre-compile option
-      include: [resolve(__dirname, './src/i18n/locales/**')],
     }),
   ],
   resolve: {

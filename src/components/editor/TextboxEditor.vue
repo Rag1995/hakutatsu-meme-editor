@@ -52,82 +52,58 @@ const adjustTextSize = (delta: number) => {
 }
 </script>
 
-<i18n lang="yaml">
-zh-TW:
-  decreaseFontSize: '文字變小'
-  increaseFontSize: '文字變大'
-  resetFontSize: '重置文字大小'
-  resetRotate: '重置旋轉'
-  resetPosition: '重置位置'
-  deleteText: '刪除文字'
-en:
-  decreaseFontSize: 'Decrease font size'
-  increaseFontSize: 'Increase font size'
-  resetFontSize: 'Reset font size'
-  resetRotate: 'Reset rotate'
-  resetPosition: 'Reset position'
-  deleteText: 'Delete text'
-ja:
-  decreaseFontSize: '文字縮小'
-  increaseFontSize: '文字拡大'
-  resetFontSize: 'サイズ初期化'
-  resetRotate: '回転初期化'
-  resetPosition: '位置初期化'
-  deleteText: '文字削除'
-</i18n>
-
 <template>
   <div class="space-y-1">
     <div class="flex flex-wrap space-y-1 space-x-4">
       <div class="join">
-        <div class="tooltip" :data-tip="t('decreaseFontSize')">
+        <div class="tooltip" :data-tip="t('buttons.decreaseFontSize')">
           <button
-            :aria-label="t('decreaseFontSize')"
+            :aria-label="t('buttons.decreaseFontSize')"
             class="btn join-item btn-square btn-sm"
             @click="adjustTextSize(-8)"
           >
             <i class="i-tabler-text-decrease" />
           </button>
         </div>
-        <div class="tooltip" :data-tip="t('increaseFontSize')">
+        <div class="tooltip" :data-tip="t('buttons.increaseFontSize')">
           <button
-            :aria-label="t('increaseFontSize')"
+            :aria-label="t('buttons.increaseFontSize')"
             class="btn join-item btn-square btn-sm"
             @click="adjustTextSize(8)"
           >
             <i class="i-tabler-text-increase" />
           </button>
         </div>
-        <div class="tooltip" :data-tip="t('resetFontSize')">
+        <div class="tooltip" :data-tip="t('buttons.resetFontSize')">
           <button
-            :aria-label="t('resetFontSize')"
+            :aria-label="t('buttons.resetFontSize')"
             class="btn join-item btn-square btn-sm"
             @click="setTextSize(originalTextSize)"
           >
             <i class="i-tabler-text-recognition" />
           </button>
         </div>
-        <div class="tooltip" :data-tip="t('resetRotate')">
+        <div class="tooltip" :data-tip="t('buttons.resetRotate')">
           <button
-            :aria-label="t('resetRotate')"
+            :aria-label="t('buttons.resetRotate')"
             class="btn join-item btn-square btn-sm"
             @click="setTextRotate(0)"
           >
             <i class="i-tabler-rotate-dot" />
           </button>
         </div>
-        <div class="tooltip" :data-tip="t('resetPosition')">
+        <div class="tooltip" :data-tip="t('buttons.resetPosition')">
           <button
-            :aria-label="t('resetPosition')"
+            :aria-label="t('buttons.resetPosition')"
             class="btn join-item btn-square btn-sm"
             @click="setTextPosition(originalLeft, originalTop)"
           >
             <i class="i-tabler-crosshair" />
           </button>
         </div>
-        <div class="tooltip" :data-tip="t('deleteText')">
+        <div class="tooltip" :data-tip="t('buttons.removeText')">
           <button
-            :aria-label="t('deleteText')"
+            :aria-label="t('buttons.removeText')"
             class="btn join-item btn-square btn-sm"
             @click="emit('remove')"
           >
