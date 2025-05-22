@@ -42,6 +42,7 @@ Hakutatsu Meme Editor 是一個基於 Vue 3 的迷因圖片編輯器，大家可
 - 樣式：Tailwind CSS
 - 圖片處理：Fabric.js
 - GIF 生成：gif.js
+- 功能導覽：Driverjs
 
 ---
 
