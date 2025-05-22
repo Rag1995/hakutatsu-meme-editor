@@ -67,6 +67,9 @@ html {
 .driver-popover.driverjs-theme .driver-popover-progress-text {
   @apply text-base-content/40;
 }
+.driver-popover.driverjs-theme .driver-popover-close-btn {
+  @apply btn btn-square btn-ghost btn-sm;
+}
 .driver-popover.driverjs-theme .driver-popover-prev-btn {
   @apply btn btn-sm btn-neutral;
 }
