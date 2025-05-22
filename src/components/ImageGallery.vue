@@ -43,7 +43,6 @@ const { removeFromGallery } = store
           >
             <i class="i-tabler-x" />
           </button>
-          <div class="absolute right-0 bottom-0">//</div>
           <img :src="dataURL" alt="Image" class="w-48 object-cover" />
         </li>
       </TransitionGroup>
