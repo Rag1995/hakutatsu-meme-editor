@@ -19,6 +19,13 @@ export default {
   files: {
     image: '画像',
   },
+  modal: {
+    changePicture: {
+      title: '画像を選択',
+      select: '選択',
+      noImages: '利用可能な画像はありません',
+    },
+  },
   buttons: {
     // common
     next: '次へ',
@@ -43,6 +50,8 @@ export default {
     resetRotate: '回転初期化',
     resetPosition: '位置初期化',
     removeText: '文字削除',
+    // image editor
+    changePicture: '画像を変更',
   },
   placeholders: {
     inputText: '文字入力#{number}',

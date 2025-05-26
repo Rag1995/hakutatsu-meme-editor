@@ -19,6 +19,13 @@ export default {
   files: {
     image: 'Image',
   },
+  modal: {
+    changePicture: {
+      title: 'Choose Image',
+      select: 'Select',
+      noImages: 'No images available',
+    },
+  },
   buttons: {
     // common
     next: 'Next',
@@ -43,6 +50,8 @@ export default {
     resetRotate: 'Reset rotate',
     resetPosition: 'Reset position',
     removeText: 'Delete text',
+    // image editor
+    changePicture: 'Change Picture',
   },
   placeholders: {
     inputText: 'InputText#{number}',

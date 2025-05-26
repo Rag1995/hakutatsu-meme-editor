@@ -19,6 +19,13 @@ export default {
   files: {
     image: '圖片',
   },
+  modal: {
+    changePicture: {
+      title: '選擇圖片',
+      select: '選擇',
+      noImages: '沒有可用的圖片',
+    },
+  },
   buttons: {
     // common
     next: '下一步',
@@ -43,6 +50,8 @@ export default {
     resetRotate: '重置旋轉',
     resetPosition: '重置位置',
     removeText: '刪除文字',
+    // image editor
+    changePicture: '更換圖片',
   },
   placeholders: {
     inputText: '輸入文字#{number}',
