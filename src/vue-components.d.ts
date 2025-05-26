@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/footer/AppFooter.vue')['default']
     AppHeader: typeof import('./components/header/AppHeader.vue')['default']
+    ChangePictureModal: typeof import('./components/modal/ChangePictureModal.vue')['default']
     DarkToggler: typeof import('./components/header/DarkToggler.vue')['default']
     DriverButton: typeof import('./components/header/DriverButton.vue')['default']
     GifGenerator: typeof import('./components/GifGenerator.vue')['default']

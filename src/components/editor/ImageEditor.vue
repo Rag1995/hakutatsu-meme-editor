@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { Canvas, FabricImage, Textbox } from 'fabric'
-import { useGalleryStore } from '@/stores'
+import { useGalleryStore, useCollectionStore } from '@/stores'
 import { downloadFile } from '@/utils'
 
 const { t } = useI18n()
 const store = useGalleryStore()
+const collectionStore = useCollectionStore()
+const { currentImage } = toRefs(collectionStore)
 
 const loading = ref(false)
 const canvasRef = ref<HTMLCanvasElement>()
@@ -51,12 +53,14 @@ const initCanvas = () => {
         { cssOnly: true },
       )
 
-      FabricImage.fromURL('./assets/img/hakutatsu.png').then((img) => {
-        img.scaleToWidth(canvas.value!.width)
-        img.scaleToHeight(canvas.value!.height!)
-        canvas.value!.backgroundImage = img
-        canvas.value!.renderAll()
-      })
+      FabricImage.fromURL('./assets/img/collection/hakutatsu.png').then(
+        (img) => {
+          img.scaleToWidth(canvas.value!.width)
+          img.scaleToHeight(canvas.value!.height!)
+          canvas.value!.backgroundImage = img
+          canvas.value!.renderAll()
+        },
+      )
 
       addTextbox()
     })
@@ -69,6 +73,31 @@ const destroyCanvas = () => {
   canvas.value?.dispose()
   canvas.value = null
 }
+
+// 更新畫布的背景圖片
+const updateCanvasImage = (newImagePath: string | null) => {
+  if (!canvas.value || !newImagePath) return
+
+  loading.value = true
+  FabricImage.fromURL(newImagePath)
+    .then((img) => {
+      img.scaleToWidth(canvas.value!.width)
+      img.scaleToHeight(canvas.value!.height!)
+      canvas.value!.backgroundImage = img
+      canvas.value!.renderAll()
+      loading.value = false
+    })
+    .catch((err) => {
+      console.error('無法載入圖片:', err)
+      loading.value = false
+    })
+}
+
+// 監聽 currentImage 的變化
+watch(currentImage, (newImagePath) => {
+  console.log('Current image changed:', newImagePath)
+  updateCanvasImage(newImagePath)
+})
 
 // 加入文字
 const addTextbox = () => {
@@ -134,6 +163,7 @@ const addToGallery = () => {
 }
 
 onMounted(() => {
+  collectionStore.loadCollectionImages()
   initCanvas()
 })
 
@@ -150,10 +180,18 @@ provide('canvas', canvas)
       class="flex flex-col flex-nowrap gap-4 md:flex-row"
       :class="{ hidden: loading }"
     >
-      <div class="shrink-0 self-center md:self-start">
+      <div class="flex flex-col gap-2 self-center md:self-start">
         <div id="hakutatsu" class="w-full max-w-sm">
           <canvas ref="canvasRef" />
         </div>
+        <!-- TODO: 更改語言 -->
+        <button
+          class="btn btn-accent"
+          onclick="change_picture_modal.showModal()"
+        >
+          <i class="i-tabler-photo-edit" />
+          {{ t('buttons.changePicture') }}
+        </button>
       </div>
       <div class="@container grow space-y-4">
         <TextboxEditor
@@ -191,5 +229,6 @@ provide('canvas', canvas)
         </div>
       </div>
     </div>
+    <ChangePictureModal />
   </div>
 </template>
